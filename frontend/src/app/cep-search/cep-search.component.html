@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand">Buscador de CEP</a>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <p class="fw-normal fs-5">Utilize o campo de pesquisa no menu superior para realizar a busca de endereços pelo CEP.
+    </p>
+    <p class="fw-normal">Informe um ou mais CEPs separados por ";" (ponto e vírgula).</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form class="row g-3">
+                <div class="col-md-5">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cep" disabled>
+                </div>
+                <div class="col-12">
+                    <label for="publicArea" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="publicArea" disabled>
+                </div>
+                <div class="col-12">
+                    <label for="Neighborhood" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="Neighborhood" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="state" class="form-label">UF</label>
+                    <input type="text" class="form-control" id="state" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="ibge" class="form-label">IBGE</label>
+                    <input type="text" class="form-control" id="ibge" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="gia" class="form-label">GIA</label>
+                    <input type="text" class="form-control" id="gia" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="ddd" class="form-label">DDD</label>
+                    <input type="text" class="form-control" id="ddd" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="siafi" class="form-label">Siafi</label>
+                    <input type="text" class="form-control" id="siafi" disabled>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary">Próximo endereço</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
