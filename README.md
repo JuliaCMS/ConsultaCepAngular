@@ -16,7 +16,7 @@ Angular versão 14.2.12
 ## Instalação
 - Clone este repositório para sua máquina local usando o seguinte comando:
 ```bash
-git clone https://github.com/your-username/cep-search.git
+git clone https://github.com/seu-usuario/ConsultaCepAngular.git
 ```
 - Navegue até o diretório do projeto:
 ```bash
