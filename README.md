@@ -10,7 +10,7 @@ Criação de um novo componente em Angular que realiza a busca de endereços pel
 Angular versão 14.2.12
 
 ## Pré-requisitos
-- Node.js instalado na sua máquina (pelo menos na versão 12).
+- Node.js instalado na sua máquina.
 - Angular CLI instalado globalmente.
 
 ## Instalação
