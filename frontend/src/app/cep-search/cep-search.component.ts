@@ -13,7 +13,8 @@ export class CepSearchComponent implements OnInit {
   @ViewChild('cepForm') cepForm!: NgForm;
   addresses: Cep[] = [];
   currentAddress = -1;
-  cepInput: string = ''; 
+  cepInput: string = '';
+  errorMessage: string = '';
 
   constructor(private cepService: CepService) { }
 
@@ -36,17 +37,39 @@ export class CepSearchComponent implements OnInit {
   cepSearch() {
     this.addresses = [];
     this.currentAddress = -1;
+    this.errorMessage = '';
 
-    const ceps = this.cepInput.split(';');
+    const ceps = this.cepInput.split(';').map(cep => cep.trim().replace(/\D/g, ''));
+    console.log('CEPs:', ceps);
     
+    if (ceps.some(cep => cep === '')) {
+      this.errorMessage = `A busca deve conter pelo menos um CEP.`;
+      console.log('Error message:', this.errorMessage);
+      return;
+    }
+
+    if (ceps.some(cep => cep.length < 8)) {
+      this.errorMessage = 'Cada CEP deve ter pelo menos 8 dígitos.';
+      console.log('Error message:', this.errorMessage);
+      return;
+    }
+
     for (const cep of ceps) {
+      console.log('continuando a busca');
       this.cepService.getCepData(cep).subscribe(
         (address: Cep) => {
-          this.addresses.push(address);
+          if (address.cep) {
+            this.addresses.push(address);
 
-          if (this.addresses.length === 1) {
-            this.currentAddress = 0;
-            this.fillAddressFields(this.addresses[this.currentAddress]);
+            if (this.addresses.length === 1) {
+              this.currentAddress = 0;
+              this.fillAddressFields(this.addresses[this.currentAddress]);
+            }
+          }
+          else {
+            this.errorMessage = `CEP ${cep} inválido ou inexistente.`;
+            console.log('Error message:', this.errorMessage);
+            return;
           }
         },
       );
