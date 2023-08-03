@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg bg-primary-subtle">
+    <div class="container-fluid">
+        <a class="navbar-brand">Buscador de CEPs</a>
+        <form class="d-flex" (ngSubmit)="cepSearch()">
+            <input class="form-control me-2" type="search" aria-label="Search" name="cepInput" [(ngModel)]="cepInput"
+                required>
+            <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+    </div>
+</nav>
+
+<div class="alert alert-danger m-5 text-center" role="alert" *ngIf="errorMessage">
+    {{ errorMessage }}
+</div>
+
+<div class="py-5 text-center">
+    <h1 class="display-5">ViaCEP API</h1>
+    <div class="col-lg-8 mx-auto">
+      <p class="lead">Utilize o campo de pesquisa no menu superior para realizar a busca de endereços pelo CEP.<br>
+        Informe um ou mais CEPs utilizando apenas números e sem espaços. Separe os CEPs por ";" (ponto e vírgula).</p>
+    </div>
+  </div>
+
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form #cepForm="ngForm" class="row g-3">
+                <div class="col-md-5">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cep" name="cep"
+                        [(ngModel)]="addresses[currentAddress].cep" disabled>
+                </div>
+                <div class="col-12">
+                    <label for="publicArea" class="form-label">Logradouro</label>
+                    <input type="text" class="form-control" id="publicArea" name="publicArea"
+                        [(ngModel)]="addresses[currentAddress].logradouro" disabled>
+                </div>
+                <div class="col-md-4">
+                    <label for="addressLine2" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="addressLine2" name="addressLine2"
+                        [(ngModel)]="addresses[currentAddress].complemento" disabled>
+                </div>
+                <div class="col-8">
+                    <label for="Neighborhood" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="Neighborhood" name="Neighborhood"
+                        [(ngModel)]="addresses[currentAddress].bairro" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="city" name="city"
+                        [(ngModel)]="addresses[currentAddress].localidade" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="state" class="form-label">UF</label>
+                    <input type="text" class="form-control" id="state" name="state"
+                        [(ngModel)]="addresses[currentAddress].uf" disabled>
+                </div>
+                <div class="col-md-6">
+                    <label for="ibge" class="form-label">IBGE</label>
+                    <input type="text" class="form-control" id="ibge" name="ibge"
+                        [(ngModel)]="addresses[currentAddress].ibge" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="gia" class="form-label">GIA</label>
+                    <input type="text" class="form-control" id="gia" name="gia"
+                        [(ngModel)]="addresses[currentAddress].gia" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="ddd" class="form-label">DDD</label>
+                    <input type="text" class="form-control" id="ddd" name="ddd"
+                        [(ngModel)]="addresses[currentAddress].ddd" disabled>
+                </div>
+                <div class="col-md-2">
+                    <label for="siafi" class="form-label">Siafi</label>
+                    <input type="text" class="form-control" id="siafi" name="siafi"
+                        [(ngModel)]="addresses[currentAddress].siafi" disabled>
+                </div>
+                <div class="col-md-5 d-flex justify-content-between mb-4" >
+                    <button type="button" class="btn btn-primary" (click)="previousAddress()">Endereço anterior</button>
+                    <button type="button" class="btn btn-primary mx-3" (click)="nextAddress()">Próximo endereço</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
