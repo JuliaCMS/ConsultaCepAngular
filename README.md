@@ -1,29 +1,43 @@
-# README #
+# Desafio Front-End - Busca CEP #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Aplicação desenvolvida como desafio para a ROKO. 
+Criação de um novo componente em Angular que realiza a busca de endereços pelo CEP, utilizando a API pública [ViaCEP](https://viacep.com.br/).
 
-### What is this repository for? ###
+## Layout App 
+![layoutviacep](https://github.com/JuliaCMS/ConsultaCepAngular/assets/108769971/a9b2b449-8eda-4b01-9b57-02ed838fe8e9)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Tecnologias utilizadas
+Angular versão 14.2.12
 
-### How do I get set up? ###
+## Pré-requisitos
+- Node.js instalado na sua máquina (pelo menos na versão 12).
+- Angular CLI instalado globalmente.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Instalação
+- Clone este repositório para sua máquina local usando o seguinte comando:
+```bash
+git clone https://github.com/your-username/cep-search.git
+```
+- Navegue até o diretório do projeto:
+```bash
+cd frontend
+```
 
-### Contribution guidelines ###
+## Instale as dependências necessárias:
+```bash
+npm install
+```
 
-* Writing tests
-* Code review
-* Other guidelines
+## Como Executar
+Para executar a aplicação localmente, execute o seguinte comando:
+```bash
+ng serve
+```
+A aplicação estará disponível em http://localhost:4200/ no seu navegador.
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+## Como Usar
+- Abra o seu navegador web e vá para http://localhost:4200/.
+- No campo de pesquisa, digite um ou vários CEPs separados por ponto e vírgula (;).
+- Clique no botão "Buscar".
+- A aplicação buscará informações de endereço na API ViaCEP e as exibirá na página.
+- Se vários CEPs forem inseridos, você pode navegar entre os resultados da pesquisa usando os botões "Endereço anterior" e "Próximo endereço".
